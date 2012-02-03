@@ -1,0 +1,11 @@
+[user]
+	name = Stephen St. Martin
+	email = kuprishuz@gmail.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[core]
+	editor = vim
+	excludesfile = /Users/stevestmartin/.gitignore
