@@ -6,7 +6,11 @@ task :setup => [:create_symlinks]
 task :create_symlinks do
   symlinks = {
     '.bashrc'    => '.bash_profile',
-    '.gitignore' => '.gitignore'
+    '.gitconfig' => '.gitconfig',
+    '.gitignore' => '.gitignore',
+    '.vim'       => '.vim',
+    '.vimrc'     => '.vimrc',
+    '.gvimrc'    => '.gvimrc'
   }
 
   puts "Creating symlinks"
@@ -15,7 +19,7 @@ task :create_symlinks do
     dest = File.join(Dir.pwd, dest)
 
     puts "  #{src} -> #{dest}"
-    `cp #{src} #{src}.#{Time.now.strftime("%m%d%Y")}.bak && rm #{src}` if File.exists?(src)
+    #`cp -R #{src} #{src}.#{Time.now.strftime("%m%d%Y")}.bak && rm -rf #{src}` if File.exists?(src)
     `ln -s #{dest}  #{src}`
   end
 end
