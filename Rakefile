@@ -1,13 +1,12 @@
 task :default => [:setup]
 
 desc 'Symlink all dotfiles'
-task :setup => [:create_symlinks] do
-
-end
+task :setup => [:create_symlinks]
 
 task :create_symlinks do
   symlinks = {
-    '.bashrc' => '.bash_profile'
+    '.bashrc'    => '.bash_profile',
+    '.gitignore' => '.gitignore'
   }
 
   puts "Creating symlinks"
