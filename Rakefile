@@ -23,3 +23,9 @@ task :create_symlinks do
     `ln -s #{dest}  #{src}`
   end
 end
+
+task :build_command_t do
+  Dir.chdir(File.join(Dir.pwd, ".vim", "bundle", "command-t", "ruby", "command-t")) do
+    `ruby extconf.rb && make`
+  end
+end
