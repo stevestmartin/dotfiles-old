@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>action</key>
+	<false/>
+	<key>background</key>
+	<true/>
+	<key>category</key>
+	<string>APPLESCRIPTS</string>
+	<key>command</key>
+	<string>on alfred_script(q)
+  
+	set project_directory to "~/Projects/e2g2"
+	
+	do shell script "cd " &amp; project_directory &amp; "; /usr/local/bin/mvim"  	tell application "Skype" to activate
+  	tell application "iTerm"		-- launch iTerm		activate			-- work with the last terminal opened		tell the last terminal			-- cd to project directory			tell the first session				write text "cd " &amp; project_directory				write text "rails s thin"			end tell					-- open an additional shell and cd to project directory			launch session "Default session"			tell the last session				write text "cd " &amp; project_directory
+				write text "rake ts:start"			end tell		end tell	end tell
+
+end alfred_script</string>
+	<key>disabled</key>
+	<false/>
+	<key>keyword</key>
+	<string>e2g2</string>
+	<key>parameter</key>
+	<integer>1</integer>
+	<key>subtitle</key>
+	<string>Launch all work applications</string>
+	<key>title</key>
+	<string>E2G2</string>
+</dict>
+</plist>

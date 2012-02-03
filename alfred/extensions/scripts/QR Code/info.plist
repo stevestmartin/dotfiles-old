@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>action</key>
+	<false/>
+	<key>category</key>
+	<string>SCRIPTS</string>
+	<key>command</key>
+	<string>OUTPUT=$(python -c "
+from urllib import urlencode, quote_plus
+from urllib2 import urlopen, Request
+from tempfile import NamedTemporaryFile
+from AppKit import *
+from Foundation import *
+import subprocess, os, objc
+
+URL = 'https://chart.googleapis.com/chart'
+METHOD = 'POST'
+DATA = '{query}'
+FILE_TYPE = '.png'
+FILE_PREFIX = 'QR-Code-'
+PARAMS = (
+	('cht', 'qr'),
+	('chs', '300x300'),
+	('chl', DATA)
+)
+
+def filename():
+	return os.path.expanduser(SAVE_PATH + FILE_PREFIX + quote_plus(DATA) + FILE_TYPE)
+
+def download():
+	request = Request(URL, data=urlencode(PARAMS))
+	response = urlopen(request).read()
+	image = NamedTemporaryFile(mode='w+b', prefix=FILE_PREFIX, suffix=FILE_TYPE, delete=False)
+	image.write(response)
+	path = os.path.abspath(image.name)
+	image.close()
+	return path
+
+if __name__ == '__main__':
+	os.popen('open %s' % download())
+");
+
+echo $OUTPUT</string>
+	<key>disabled</key>
+	<false/>
+	<key>escapequery</key>
+	<false/>
+	<key>escapequerybackquotes</key>
+	<false/>
+	<key>escapequerybrackets</key>
+	<false/>
+	<key>escapequeryquotes</key>
+	<true/>
+	<key>escapequerysemicolons</key>
+	<false/>
+	<key>growloutput</key>
+	<false/>
+	<key>growloutputsticky</key>
+	<false/>
+	<key>keyword</key>
+	<string>qr</string>
+	<key>logging</key>
+	<false/>
+	<key>parameter</key>
+	<integer>3</integer>
+	<key>silent</key>
+	<true/>
+	<key>subtitle</key>
+	<string>Generate a QR code for a link or some text</string>
+	<key>title</key>
+	<string>QR Generator</string>
+</dict>
+</plist>

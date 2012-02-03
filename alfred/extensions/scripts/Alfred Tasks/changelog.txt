@@ -1,0 +1,11 @@
+1.2
+¬ Removed default list
+¬ Todo list generated on first run, if needed
+¬ Code cleanup
+¬ Added support for update extension
+¬ Added about command
+¬ Added version command
+¬ Added command to view changelog
+
+1.1
+¬ Added support for multiple delete

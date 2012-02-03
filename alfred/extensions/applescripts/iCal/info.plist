@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>action</key>
+	<false/>
+	<key>background</key>
+	<false/>
+	<key>category</key>
+	<string>APPLESCRIPTS</string>
+	<key>command</key>
+	<string>on alfred_script(evTest)
+set uCal to "Gianni" --define here your own default iCal calendarset alarmTime to -30 --define your 1st sound alarm intervalset alarmTime2 to -15 --define your 2nd sound alarm intervalset alarmMailTime to -60 --define your own mail alarm intervalset atSep to " at "set onSep to " on "set inSep to " in "set todSep to " today"set tomSep to " tomorrow"set d to ""set h to ""set min to "00"if evTest contains atSep then -- checking specific event hour	set text item delimiters to atSep	set obj to text item 1 of evTest --saving object of activity (i.e. go shopping)	set r_h to text item 2 of evTest	set text item delimiters to " "	set hm to text item 1 of r_h -- h contains the hour	if hm contains ":" then		set text item delimiters to ":"		set h to text item 1 of hm		set min to text item 2 of hm	else		set h to hm	end if	set alldayFlag to falseelse	set alldayFlag to true -- no hour specified, allday event scheduled	if evTest contains onSep then		set text item delimiters to onSep		set obj to text item 1 of evTest --saving object of activity (i.e. go shopping)	else if evTest contains todSep then		set text item delimiters to todSep		set obj to text item 1 of evTest --saving object of activity (i.e. go shopping)	else if evTest contains tomSep then		set text item delimiters to tomSep		set obj to text item 1 of evTest --saving object of activity (i.e. go shopping)	else if evTest contains inSep then		set text item delimiters to inSep		set obj to text item 1 of evTest --saving object of activity (i.e. go shopping)	end ifend ifif evTest contains onSep then -- checking event date	set text item delimiters to onSep	set r_d to text item 2 of evTest	set text item delimiters to " "	set dat to text item 1 of r_d -- d contains the date	set dd to date dat	set hours of dd to h	set minutes of dd to minelse if evTest contains "today" then	set dd to current date --(d &amp; " " &amp; (m as number) &amp; " " &amp; y) as string -- now d contains current date	set hours of dd to h	set minutes of dd to minelse if evTest contains "tomorrow" then	set dd to current date --(d &amp; " " &amp; (m as number) &amp; " " &amp; y) as string -- now d contains current date	set {year:y, month:m, day:d} to (current date)	set day of dd to (d + 1)	set hours of dd to h	set minutes of dd to minend ifif evTest contains inSep then -- checking specific event location	set text item delimiters to inSep	set r_l to text item 2 of evTest	set l to text item 1 of r_l -- l contains the locationelse	set l to "" -- no location specified, empty fieldend iftell application "iCal"	activate	set newEvent to make new event in calendar uCal with properties {summary:obj, start date:dd, end date:dd + 2 * hours, location:l, allday event:alldayFlag}	set theAlarm to make new sound alarm at end of sound alarms of newEvent with properties {trigger interval:alarmTime, sound name:"Sosumi"}	set theAlarm2 to make new sound alarm at end of sound alarms of newEvent with properties {trigger interval:alarmTime2, sound name:"Sosumi"}	set theMailAlarm to make new mail alarm at end of mail alarms of newEvent with properties {trigger interval:alarmMailTime}end tell--Growl Supporttell application "System Events"	set isRunning to (count of (every process whose bundle identifier is "com.Growl.GrowlHelperApp")) &gt; 0end tellif isRunning then	tell application id "com.Growl.GrowlHelperApp"		set the allNotificationsList to ¬			{"Event added"}				set the enabledNotificationsList to ¬			{"Event added"}				register as application ¬			"Growl iCal" all notifications allNotificationsList ¬			default notifications enabledNotificationsList ¬			icon of application "iCal"				-- Send a Notification...		notify with name ¬			"Event added" title ¬			"iCal for Alfred" description ¬			(obj as text) &amp; " event added correctly" application name "Growl iCal"	end tellend if
+end alfred_script</string>
+	<key>disabled</key>
+	<false/>
+	<key>keyword</key>
+	<string>cal</string>
+	<key>parameter</key>
+	<integer>2</integer>
+	<key>subtitle</key>
+	<string>Add event in iCal - what [at] hour [on] dd/mm/yy [in] location</string>
+	<key>title</key>
+	<string>iCal</string>
+</dict>
+</plist>

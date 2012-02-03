@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>action</key>
+	<false/>
+	<key>category</key>
+	<string>SCRIPTS</string>
+	<key>command</key>
+	<string># Type 'capture help' for more information
+
+tclsh capture.tcl {query}</string>
+	<key>escapequery</key>
+	<true/>
+	<key>escapequerybackquotes</key>
+	<true/>
+	<key>escapequerybrackets</key>
+	<true/>
+	<key>escapequeryquotes</key>
+	<true/>
+	<key>escapequerysemicolons</key>
+	<true/>
+	<key>growloutput</key>
+	<true/>
+	<key>growloutputsticky</key>
+	<true/>
+	<key>keyword</key>
+	<string>capture</string>
+	<key>logging</key>
+	<false/>
+	<key>silent</key>
+	<true/>
+	<key>subtitle</key>
+	<string>Capture various screen elements</string>
+	<key>title</key>
+	<string>Capture screen element</string>
+</dict>
+</plist>
