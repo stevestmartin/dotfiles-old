@@ -16,9 +16,13 @@ namespace :setup do
       src  = File.expand_path(File.join("~", src))
       dest = File.join(Dir.pwd, dest)
 
-      puts "  #{src} -> #{dest}"
+      print "  #{src} -> #{dest}"
       #`cp -R #{src} #{src}.#{Time.now.strftime("%m%d%Y")}.bak && rm -rf #{src}` if File.exists?(src)
-      `ln -s #{dest}  #{src}`
+      #`ln -s #{dest}  #{src}`
+      
+      if `ln -s #{dest} #{src} 2>/dev/null`
+        puts " [FAILED]"
+      end
     end
   end
 end
