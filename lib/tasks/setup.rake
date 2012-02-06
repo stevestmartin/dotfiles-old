@@ -7,6 +7,7 @@ namespace :setup do
       '.bashrc'    => '.bash_profile',
       '.gitconfig' => '.gitconfig',
       '.gitignore' => '.gitignore',
+      '.pryrc'     => '.pryrc',
       '.vim'       => '.vim',
       '.vimrc'     => '.vimrc',
       '.gvimrc'    => '.gvimrc'
