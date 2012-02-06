@@ -7,6 +7,7 @@ namespace :setup do
       '.bashrc'    => '.bash_profile',
       '.gitconfig' => '.gitconfig',
       '.gitignore' => '.gitignore',
+      '.pryrc'     => '.pryrc',
       '.vim'       => '.vim',
       '.vimrc'     => '.vimrc',
       '.gvimrc'    => '.gvimrc'
@@ -20,7 +21,7 @@ namespace :setup do
       #`cp -R #{src} #{src}.#{Time.now.strftime("%m%d%Y")}.bak && rm -rf #{src}` if File.exists?(src)
       #`ln -s #{dest}  #{src}`
       
-      if `ln -s #{dest} #{src} 2>/dev/null`
+      unless `ln -s #{dest} #{src} 2>/dev/null`
         puts " [FAILED]"
       end
     end
