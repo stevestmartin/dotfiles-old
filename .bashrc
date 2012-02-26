@@ -3,6 +3,8 @@ export CLICOLOR=1
 export EDITOR="/usr/local/bin/vim -f"
 export VISUAL="/usr/local/bin/vim -f"
 
+alias vim='mvim -v'
+
 # RVM
 [[ -s "/Users/stevestmartin/.rvm/scripts/rvm" ]] && source "/Users/stevestmartin/.rvm/scripts/rvm"
 
