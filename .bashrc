@@ -1,5 +1,4 @@
-export PATH=/usr/local/bin:/usr/local/mysql/bin:$PATH
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
 export CLICOLOR=1
 export EDITOR=/usr/local/bin/vim
 
