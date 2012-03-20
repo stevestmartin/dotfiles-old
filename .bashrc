@@ -2,6 +2,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH
 export CLICOLOR=1
 export EDITOR="/usr/local/bin/vim -f"
 export VISUAL="/usr/local/bin/vim -f"
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/
 
 alias vim='mvim -v'
 
