@@ -52,6 +52,7 @@ filetype plugin indent on		      " Turn on file type detection.
 map <silent><Leader>rt :!/usr/local/bin/ctags --extra=+f --exclude=.git --exclude=test --exclude=*.html --exclude=*.haml --exclude=Makefile --exclude=*.min.js --exclude=*.css --exclude=*.sass --exclude=*.yml --exclude=Rakefile --exclude=tmp --exclude=spec --exclude=Gemfile --exclude=Gemfile.lock --exclude=README --exclude=log -R * `bundle show rails`/../*<CR><CR>
 
 " change CtrlP default settings
+let g:ctrlp_arg_map = 1
 let g:ctrlp_regexp = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_height = 15
