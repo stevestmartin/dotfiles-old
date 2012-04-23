@@ -49,13 +49,18 @@ colorscheme ir_black              " Color scheme.
 filetype plugin indent on		      " Turn on file type detection.
 
 " retag ctags for project and gems
-map <Leader>rt :!/usr/local/bin/ctags --extra=+f --exclude=.git --exclude=test --exclude=*.html --exclude=*.haml --exclude=Makefile --exclude=*.min.js --exclude=*.css --exclude=*.sass --exclude=*.yml --exclude=Rakefile --exclude=tmp --exclude=spec --exclude=Gemfile --exclude=Gemfile.lock --exclude=README --exclude=log -R * `bundle show rails`/../*<CR><CR>
+map <silent><Leader>rt :!/usr/local/bin/ctags --extra=+f --exclude=.git --exclude=test --exclude=*.html --exclude=*.haml --exclude=Makefile --exclude=*.min.js --exclude=*.css --exclude=*.sass --exclude=*.yml --exclude=Rakefile --exclude=tmp --exclude=spec --exclude=Gemfile --exclude=Gemfile.lock --exclude=README --exclude=log -R * `bundle show rails`/../*<CR><CR>
 
-" flush command-t cash
-map <Leader>ct :CommandTFlush<CR><CR>
+" change CtrlP default settings
+let g:ctrlp_regexp = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_max_height = 15
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix']
 
-" tagbar toggle display
-map <Leader>f :TagbarToggle<CR><CR>
+map <Leader>f :CtrlP<CR>
+map <Leader>b :CtrlPBuffer<CR>
+map <Leader>t :CtrlPBufTag<CR>
+map <Leader>q :CtrlPQuickfix<CR>
 
 " change zencoding default expansion
 let g:user_zen_expandabbr_key = '<c-e>' 
