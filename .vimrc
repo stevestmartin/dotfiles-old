@@ -3,7 +3,7 @@ set nocompatible 			            " Don't run in VI compatability mode (MUST COME 
 " Load pathogen for plugin management
 runtime bundle/pathogen/autoload/pathogen.vim
 silent! call pathogen#infect()
-" silent! call pathogen#helptags()
+silent! call pathogen#helptags()
 
 set showcmd				                " Display incomplete commands.
 set showmode				              " Display the mode you're in.
