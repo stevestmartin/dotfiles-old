@@ -40,7 +40,7 @@ set expandtab				              " Use spaces instead of tabs.
 set number                        " Display line numbers.
 
 set laststatus=2			            " Show that status line all the time.
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}\ %{exists('g:loaded_rvm')?rvm#statusline():''}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}\ %{exists('g:loaded_rvm')?rvm#statusline():''}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l/%L,%c%V\ %)%P
 
 syntax enable				              " Turn on syntax highlighting.
 set background=light              " Set background.
