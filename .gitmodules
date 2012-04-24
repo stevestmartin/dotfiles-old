@@ -76,3 +76,6 @@
 [submodule ".vim/bundle/solorarized"]
 	path = .vim/bundle/solorarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/bundle/tlib"]
+	path = .vim/bundle/tlib
+	url = https://github.com/tomtom/tlib_vim.git
