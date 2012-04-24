@@ -73,3 +73,6 @@
 [submodule ".vim/bundle/addon-mw-utils"]
 	path = .vim/bundle/addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule ".vim/bundle/solorarized"]
+	path = .vim/bundle/solorarized
+	url = git://github.com/altercation/vim-colors-solarized.git
