@@ -68,5 +68,15 @@ map <Leader>q :CtrlPQuickfix<CR>
 let g:user_zen_expandabbr_key = '<c-e>' 
 let g:use_zen_complete_tag = 1
 
+" hotkeys for fugitive
+map <Leader>gb :Gblame<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>gd :Gdiff<CR>
+map <Leader>gl :Glog<CR>
+map <Leader>gre :Gread<CR>
+map <Leader>grm :Gremove<CR>
+map <Leader>gs :Gstatus<CR>
+map <Leader>gw :Gwrite<CR>
+
 au BufRead,BufNewFile *.arb set filetype=ruby
 au BufRead,BufNewFile Guardfile set filetype=ruby
