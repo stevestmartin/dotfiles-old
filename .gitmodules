@@ -25,18 +25,12 @@
 [submodule ".vim/bundle/rvm"]
 	path = .vim/bundle/rvm
 	url = https://github.com/tpope/vim-rvm.git
-[submodule ".vim/bundle/ragtag"]
-	path = .vim/bundle/ragtag
-	url = https://github.com/tpope/vim-ragtag.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/ack"]
 	path = .vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule ".vim/bundle/autocomplpop"]
-	path = .vim/bundle/autocomplpop
-	url = git://github.com/clones/vim-autocomplpop.git
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -55,9 +49,6 @@
 [submodule ".vim/bundle/commentary"]
 	path = .vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/conque"]
-	path = .vim/bundle/conque
-	url = https://github.com/rson/vim-conque.git
 [submodule ".vim/bundle/zencoding"]
 	path = .vim/bundle/zencoding
 	url = http://github.com/mattn/zencoding-vim.git
@@ -67,9 +58,6 @@
 [submodule ".vim/bundle/ctrlp"]
 	path = .vim/bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/l9"]
-	path = .vim/bundle/l9
-	url = git://github.com/slack/vim-l9.git
 [submodule ".vim/bundle/addon-mw-utils"]
 	path = .vim/bundle/addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
