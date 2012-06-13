@@ -79,4 +79,5 @@ map <Leader>gs :Gstatus<CR>
 map <Leader>gw :Gwrite<CR>
 
 au BufRead,BufNewFile *.arb set filetype=ruby
+au BufRead,BufNewFile *.thor set filetype=ruby
 au BufRead,BufNewFile Guardfile set filetype=ruby
