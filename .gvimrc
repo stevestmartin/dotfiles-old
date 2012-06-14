@@ -6,5 +6,6 @@ set lines=40 columns=130          " Window dimensions.
 set guioptions-=r                 " Don't show right scrollbar
 set guifont=Menlo:h12             " Set default font
 set linespace=1                   " Set default line height
+set background=dark               " Set background.
 
-colorscheme solarized
+colorscheme ir_black

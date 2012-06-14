@@ -43,7 +43,7 @@ set laststatus=2			            " Show that status line all the time.
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}\ %{exists('g:loaded_rvm')?rvm#statusline():''}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l/%L,%c%V\ %)%P
 
 syntax enable				              " Turn on syntax highlighting.
-set background=light              " Set background.
+set background=dark               " Set background.
 colorscheme solarized             " Color scheme.
 
 filetype plugin indent on		      " Turn on file type detection.
