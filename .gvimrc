@@ -8,4 +8,4 @@ set guifont=Menlo:h12             " Set default font
 set linespace=1                   " Set default line height
 set background=dark               " Set background.
 
-colorscheme ir_black
+colorscheme jellybeans

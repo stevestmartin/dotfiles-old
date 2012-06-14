@@ -44,7 +44,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}\ %{exists('g:
 
 syntax enable				              " Turn on syntax highlighting.
 set background=dark               " Set background.
-colorscheme solarized             " Color scheme.
+colorscheme jellybeans            " Color scheme.
 
 filetype plugin indent on		      " Turn on file type detection.
 
